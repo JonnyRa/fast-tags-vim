@@ -1,0 +1,11 @@
+#!/bin/bash
+
+shopt -s globstar                                 
+
+files=$@
+if [[ ! -r tags ]]; then
+    echo "Generating tags from scratch..."
+    fast-tags -R --qualified **/*.hs   
+else
+    fast-tags --qualified $files
+fi

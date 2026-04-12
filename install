@@ -1,0 +1,12 @@
+#!/bin/bash
+
+#put qualified_tags where fast-tags.vim expects it to be
+mkdir -p ~/.vim/py
+ln -s -f ~/.vim/plugged/fast-tags-vim/tools/qualified_tags.py ~/.vim/py/qualified_tags.py
+
+#put init-tags on the path
+mkdir -p ~/.local/bin
+ln -s -f ~/.vim/plugged/fast-tags-vim/tools/init-tags ~/.local/bin/init-tags
+
+#install the main tool
+stack install fast-tags
